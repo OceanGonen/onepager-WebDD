@@ -19,7 +19,7 @@ function scrollToCenter(sectionIndex) {
     if (sectionIndex >= 0 && sectionIndex < sections.length) {
         const section = sections[sectionIndex];
 
-        //Source:
+        //Source:https://stackoverflow.com/questions/11529070/scroll-to-the-center-of-viewport?
         const top = section.offsetTop + (section.offsetHeight / 2) - (window.innerHeight / 2);
 
         window.scrollTo({ top: top, behavior: 'smooth' });
@@ -32,7 +32,7 @@ function updateButtons() {
     
     floatUpBtn.style.display = 'none';
     sinkDownBtn.style.display = 'none';
-    // Toon de knoppen op de juiste secties
+    // Show buttons on the correct sections
     if (section === 1 || section === 2) {
         floatUpBtn.style.display = 'block';
         sinkDownBtn.style.display = 'block';
@@ -63,7 +63,7 @@ document.startViewTransition(() => {
 });
 
 //Glowing cursor in deep
-const waterSections = document.querySelectorAll('section:not(:first-of-type)');
+const waterSections = document.querySelectorAll('section:not(:first-of-type):not(:last-of-type)');
 
 waterSections.forEach((section, index) => {
     section.addEventListener('mousemove', e => {
@@ -72,7 +72,6 @@ waterSections.forEach((section, index) => {
         const y = e.clientY - rect.top;
         
         // Calculate opacity: starts at 0.1 on section 2 and increases
-        // index starts at 0 for the first 'water' section (which is actually section 2)
         const opacity = 0.1 + (index * 0.105); 
 
         section.style.setProperty('--cursorX', x + 'px');
@@ -87,7 +86,7 @@ waterSections.forEach((section, index) => {
 const particleContainer = document.getElementById('particle-container');
 const particleCount = 50;
 
-// 1. Create the particles
+// Create the particles
 for (let i = 0; i < particleCount; i++) {
     const particle = document.createElement('div');
     particle.className = 'particle';
@@ -104,28 +103,24 @@ for (let i = 0; i < particleCount; i++) {
     particleContainer.appendChild(particle);
 }
 
-// 2. Update color based on depth
+// Update color based on depth
 window.addEventListener('scroll', () => {
-    const skyHeight = window.innerHeight * 0.8; // Match your 80% height for section 1
+    const pageHeight = window.innerHeight * 0.8;
     const scrollY = window.scrollY;
     
-    // Calculate scroll percentage relative to the total scrollable area
     const scrollPercent = scrollY / (document.documentElement.scrollHeight - window.innerHeight);
 
     // Update Particle Visibility
     const particles = document.querySelectorAll('.particle');
     particles.forEach(p => {
-        if (scrollY < skyHeight) {
-            // Invisible in the sky
+        if (scrollY < pageHeight) {
             p.style.opacity = '0';
         } else {
-            // Fade in and stay visible (around 0.4 opacity) in the water
             p.style.opacity = '0.4';
         }
     });
 
-    // 2. Update color based on depth (only if we are below the sky)
-    if (scrollY >= skyHeight) {
+    if (scrollY >= pageHeight) {
         const r = Math.floor(255 - (scrollPercent * (255 - 66)));
         const g = 255;
         const b = 255;
