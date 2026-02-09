@@ -26,16 +26,6 @@ function scrollToCenter(sectionIndex) {
     }
 }
 
-const bubbles = document.querySelectorAll('.bubble');
-
-bubbles.forEach(bubble => {
-  bubble.addEventListener('click', () => {
-    bubbles.forEach(b => b !== bubble && b.classList.remove('active'));
-    bubble.classList.toggle('active');
-  });
-});
-
-
 
 function updateButtons() {
     const section = getCurrentSection();
@@ -66,11 +56,6 @@ window.addEventListener('scroll', updateButtons);
 window.addEventListener('load', updateButtons);
 updateButtons();
 
-
-// View transitions
-document.startViewTransition(() => {
-    filterItems();
-});
 
 //Glowing cursor in deep
 const waterSections = document.querySelectorAll('section:not(:first-of-type):not(:last-of-type)');
@@ -139,4 +124,47 @@ window.addEventListener('scroll', () => {
     }
 });
 
+//Section 1. denkwijze/////////////////////////////////////////////////////////////////////////////////
+const bubbles = document.querySelectorAll('.bubble');
 
+bubbles.forEach(bubble => {
+  bubble.addEventListener('click', () => {
+    bubbles.forEach(b => b !== bubble && b.classList.remove('active'));
+    bubble.classList.toggle('active');
+  });
+});
+
+
+//Section 2. Leerdoelen //////////////////////////////////////////////////////////////////////////////
+
+document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+        threshold: 0.2 // Trigger when 20% of the section is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const cards = entry.target.querySelectorAll('.goal-card');
+            
+            if (entry.isIntersecting) {
+                // When entering: Add the class
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('reveal');
+                    }, index * 200); // Small stagger effect
+                });
+            } else {
+                // When leaving: Remove the class
+                cards.forEach(card => {
+                    card.classList.remove('reveal');
+                });
+            }
+        });
+    }, observerOptions);
+
+    // Target the specific section
+    const leerdoelenSection = document.querySelector('#leerdoelen');
+    if (leerdoelenSection) {
+        observer.observe(leerdoelenSection);
+    }
+});
