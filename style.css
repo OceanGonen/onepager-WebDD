@@ -308,7 +308,7 @@ h2 {
 
 .wave-text span {
     display: inline-block;
-    font-size: 5rem;
+    font-size: 4rem;
     color: #6b99d9;
     animation: wave 7s ease-in-out infinite;
     text-shadow: 0 0 15px rgba(66, 245, 245, 0.1),
@@ -367,12 +367,102 @@ h2 {
     }
 }
 
+
+
+/* Bubble base */
+.bubble {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+
+  width: 100px;
+  height: 100px;
+  padding: 1.2rem;
+
+  border-radius: 50%;
+  background: rgba(107, 153, 217, 0.15);
+  border: 3px solid rgba(202, 203, 205, 0.4);
+
+  color: #6b99d9;
+  cursor: pointer;
+  text-align: center;
+
+  backdrop-filter: blur(6px);
+  animation: floatBubble 6s ease-in-out infinite;
+
+  transition:
+    width 0.5s ease,
+    height 0.5s ease,
+    border-radius 0.5s ease,
+    background 0.5s ease;
+}
+.bubble.active {
+  width: 320px;
+  height: auto;
+  border-radius: 24px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.8);
+
+}
+.bubble:hover{
+    transform: scale(1.2);
+}
+
+/* Titel */
+.bubble-title {
+  font-size: 3em;
+  font-weight: 600;
+  color:#ddd;
+}
+
+.bubble.active .bubble-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ddd;
+}
+
+/* Verborgen tekst */
+.bubble-text {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: left;
+
+
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+/* Expanded state */
+
+
+.bubble.active .bubble-text {
+  opacity: 1;
+  max-height: 200px;
+  color: #ddd;
+}
+
+/* Floating animation */
+@keyframes floatBubble {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+
 .banner {
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     text-align: center;
     overflow: hidden;
     position: relative;
+
+    grid-area: 2 / 2 / 3 / 5;
 }
 
 .banner .slider {

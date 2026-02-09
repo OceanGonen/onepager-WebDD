@@ -26,6 +26,16 @@ function scrollToCenter(sectionIndex) {
     }
 }
 
+const bubbles = document.querySelectorAll('.bubble');
+
+bubbles.forEach(bubble => {
+  bubble.addEventListener('click', () => {
+    bubbles.forEach(b => b !== bubble && b.classList.remove('active'));
+    bubble.classList.toggle('active');
+  });
+});
+
+
 
 function updateButtons() {
     const section = getCurrentSection();
