@@ -1,4 +1,4 @@
-Leerdoelen
+**Leerdoelen**
 1. Backend: API Filteren & Architectuur
 Competenties: Oriënteren en begrijpen | Prototypen en uitwerken
 
@@ -8,6 +8,7 @@ Doel: Ik breid mijn API-fetch (Directus) uit zodat ik alleen specifieke velden (
 Competenties: Prototypen en uitwerken | Samen ontwerpen
 
 Doel: Ik optimaliseer de JavaScript-logica van mijn carrousels door een 'infinite scroll' te realiseren zonder visuele haperingen. Ik gebruik hiervoor transform: translateX en stem de timing/threshold. Meetbaar resultaat: Een naadloze overloop van de items in de 'Abyss' sectie en gedocumenteerde feedback van een peer.
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Logboek:**
 
