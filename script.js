@@ -32,12 +32,13 @@ function updateButtons() {
     
     floatUpBtn.style.display = 'none';
     sinkDownBtn.style.display = 'none';
-    // Show buttons on the correct sections
-    if (section === 1 || section === 2) {
+
+    if (section > 0) {
         floatUpBtn.style.display = 'block';
-        sinkDownBtn.style.display = 'block';
-    } else if (section === 3) {
-        floatUpBtn.style.display = 'block';
+        
+        if (section < sections.length - 1) {
+            sinkDownBtn.style.display = 'block';
+        }
     }
 }
 
@@ -168,3 +169,4 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(leerdoelenSection);
     }
 });
+
