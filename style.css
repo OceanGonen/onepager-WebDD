@@ -4,6 +4,7 @@
     --shallow-water-color: linear-gradient(to bottom, rgb(32, 32, 116), rgb(20, 20, 61));
     --deep-water-color: linear-gradient(to bottom, rgb(20, 20, 61), rgb(8, 8, 44));
     --abyss-color: linear-gradient(to bottom, rgb(8, 8, 44), black);
+    --carousel-sets: 2;
 }
 @media (prefers-reduced-motion: reduce) {
     *, ::before, ::after {
@@ -44,6 +45,10 @@ body {
 
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: black;
+}
+
+h2 {
+    
 }
 
 p, h3 {
@@ -411,82 +416,119 @@ h2 {
 
 
 
-/* Bubble base */
-.bubble {
-    position: absolute;
-    left: var(--x);
-    top: var(--y);
+/* --- SECTION 2 GRID & BUBBLE LOGIC --- */
 
-    width: 100px;
-    height: 100px;
-    padding: 1.2rem;
+.parent {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    justify-items: center;
+    padding: 2rem 0;
+}
+
+.wave-container {
+    grid-column: 1 / -1;
+    order: -1; 
+}
+
+.bubble {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    
+    width: 120px;
+    height: 120px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     border-radius: 50%;
     background: rgba(107, 153, 217, 0.15);
     border: 3px solid rgba(202, 203, 205, 0.4);
-
     color: #6b99d9;
     cursor: pointer;
-    text-align: center;
-
     backdrop-filter: blur(6px);
+    
     animation: floatBubble 4s ease-in-out infinite;
     animation-delay: var(--delay);
-
-    transition:
-        width 0.5s ease,
-        height 0.5s ease,
-        border-radius 0.5s ease,
-        background 0.5s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bubble.active {
-    width: 320px;
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 350px;
     height: auto;
-    border-radius: 24px;
-    background: rgba(0, 0, 0, 0.4);
-    border: 3px solid rgba(255, 255, 255, 0.8);
-
+    aspect-ratio: auto;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 50;
+    padding: 1.5rem;
 }
 
-.bubble:hover {
-    transform: scale(1.2);
+@media (min-width: 1024px) {
+    .parent {
+        display: block; 
+        height: 600px;  
+        width: 100%;
+    }
+
+    section:nth-of-type(2) .wave-container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .bubble {
+        position: absolute !important;
+        left: var(--x) !important;
+        top: var(--y) !important;
+        width: 100px;
+        height: 100px;
+    }
+
+    .bubble.active {
+        width: 320px;
+        grid-column: auto;
+    }
 }
 
-/* Titel */
+/* --- TEXT & ANIMATION FIXES --- */
+
 .bubble-title {
-    font-size: 3em;
-    font-weight: 600;
-    color: #ddd;
+    font-size: 2.5em;
+    line-height: 1;
 }
 
-.bubble.active .bubble-title {
-    font-size: 1rem;
-    font-weight: 800;
-    color: #ddd;
-}
-
-/* Verborgen tekst */
 .bubble-text {
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    margin-top: 0.8rem;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    text-align: left;
-
-
-    transition: opacity 0.4s ease, max-height 0.4s ease;
+    font-size: 0.95rem;
+    color: #ddd;
+    margin-top: 0;
+    transition: all 0.4s ease;
 }
-
-/* Expanded state */
-
+.bubble.active {
+    animation: floatBubble 10s infinite ease-in-out;
+}
 
 .bubble.active .bubble-text {
     opacity: 1;
-    max-height: 200px;
-    color: #ddd;
+    max-height: 300px;
+    margin-top: 1rem;
+}
+
+.bubble.active .bubble-title {
+    font-size: 1.2rem;
 }
 
 /* Floating animation */
@@ -503,64 +545,6 @@ h2 {
     }
 }
 
-
-.banner {
-    width: 100%;
-    height: 50vh;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-
-    grid-area: 2 / 2 / 3 / 5;
-}
-
-.banner .slider {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    padding: 0;
-    margin: 0;
-    top: 10%;
-    left: calc(50% - 100px);
-
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-
-    animation: autoRun 30s linear infinite;
-}
-
-@keyframes autoRun {
-    from {
-        transform: perspective(1000px) rotateX(-7deg) rotateY(0deg);
-    }
-
-    to {
-        transform: perspective(1000px) rotateX(-7deg) rotateY(360deg);
-    }
-}
-
-.banner .slider .item {
-
-    border: solid rgb(42, 42, 160) 3px;
-    list-style: none;
-    border-radius: 50%;
-    position: absolute;
-    inset: 0 0 0 0;
-    transform:
-        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(450px);
-
-
-}
-
-.banner .slider .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-
-
 #particle-container {
     position: fixed;
     top: 0;
@@ -569,14 +553,12 @@ h2 {
     height: 100%;
     pointer-events: none;
     z-index: 1;
-    /* Behind your text, but above the background */
 }
 
 .particle {
     position: absolute;
     background-color: var(--particle-color, #fff);
     border-radius: 50%;
-    /* Start invisible for Section 1 */
     opacity: 0;
     filter: blur(1px);
     transition: background-color 0.5s ease, opacity 0.5s ease;
@@ -599,9 +581,6 @@ h2 {
     }
 }
 
-
-
-
 /* SECTION 3 leerdoelen /////////////////////////////////////////////////////////////*/
 section:nth-of-type(3) {
     --bg-variable-name: var(--deep-water-color);
@@ -622,7 +601,6 @@ section:nth-of-type(3) {
 
 section:nth-of-type(3) .wave-text span {
     color: #5385c2;
-    /* Slightly lighter base color for the glow */
     text-shadow: 0 0 15px rgba(66, 245, 245, 0.1),
         0 0 25px rgba(66, 245, 245, 0.1),
         0 0 35px rgba(66, 245, 245, 0.1);
@@ -687,14 +665,14 @@ section:nth-of-type(3) .wave-text span {
 }
 
 /* Grid Assignments */
-.div1 {
+section:nth-of-type(3) .leerdoel-1 {
     grid-area: 1 / 1 / 4 / 2;
     display: flex;
     align-items: center;
-    justify-content: center;
+    
 }
 
-.div2 {
+.section-title {
     grid-area: 2 / 2 / 3 / 3;
     display: flex;
     align-items: center;
@@ -702,11 +680,10 @@ section:nth-of-type(3) .wave-text span {
     z-index: 10;
 }
 
-.div3 {
+.leerdoel-2 {
     grid-area: 1 / 3 / 4 / 4;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 /* Card Styling & Animations */
@@ -759,18 +736,6 @@ section:nth-of-type(3) .wave-text span {
         gap: 2rem;
     }
 
-    .div1,
-    .div2,
-    .div3 {
-        grid-area: unset;
-        /* Break the grid for mobile */
-    }
-
-    .div2 {
-        order: -1;
-    }
-
-    /* Put title at the top on mobile */
 
     .left-slide,
     .right-slide {
@@ -798,7 +763,6 @@ section:nth-of-type(4) {
 
 section:nth-of-type(4) .wave-text span {
     color: #609696;
-    /* Slightly lighter base color for the glow */
     text-shadow: 0 0 15px rgba(66, 245, 245, 0.2),
         0 0 25px rgba(66, 245, 245, 0.2),
         0 0 35px rgba(66, 245, 245, 0.2);
@@ -818,16 +782,17 @@ section:nth-of-type(4) .wave-text span {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: max-content;
-    width: 70%;
+    width: 100%;
     height: 100%;
 }
 
 
-section:nth-of-type(4) .div1 {
+section:nth-of-type(4) .kook-passie {
     grid-area: 1 / 1 / 2 / 4;
+
 }
 
-section:nth-of-type(4) .div2 {
+section:nth-of-type(4) .section-title {
     grid-area: 2 / 2 / 3 / 3;
     display: flex;
     justify-content: center;
@@ -836,48 +801,38 @@ section:nth-of-type(4) .div2 {
     margin: 8% 0;
 }
 
-section:nth-of-type(4) .div3 {
+section:nth-of-type(4) .sport-passie {
     grid-area: 3 / 1 / 4 / 4;
 }
 
 /* Carousel Mechanics */
 .carousel-container {
     width: 100%;
-    overflow: hidden;
+    overflow: clip;
     display: flex;
     align-items: center;
 
     white-space: nowrap;
-    /* Keeps everything in one line */
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    /* Nice fade effect on edges */
 }
 
-.carousel-items-container {
-    display: flex;
-    /* Use a gap here instead of margins on items for easier math */
-    gap: 40px; 
-    padding-right: 40px; /* This padding must match the gap! */
-}
 
 .carousel-track {
     display: flex;
     width: max-content;
-    /* Automatically fits all items */
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 20s linear infinite;
 }
 
 .carousel-track.reverse {
-    animation: scroll-right 20s linear infinite;
+    animation: scroll-right 25s linear infinite;
 }
 
 .carousel-item {
     width: 200px;
     height: 280px;
     margin: 0 30px;
-    flex-shrink: 0;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: clip;
     border: 3px solid rgb(58, 149, 167);
 }
 
@@ -885,7 +840,6 @@ section:nth-of-type(4) .div3 {
     width: 200px;
     height: 200px;
     margin: 0 30px;
-    flex-shrink: 0;
     border-radius: 10px;
     overflow: hidden;
     border: 3px solid rgb(58, 149, 167);
@@ -910,14 +864,13 @@ section:nth-of-type(4) .div3 {
     }
 
     100% {
-        /* This moves the track by exactly half its width */
-        transform: translateX(-50%);
+        transform: translateX(calc(-100% / var(--carousel-sets)));
     }
 }
 
 @keyframes scroll-right {
     0% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-100% / var(--carousel-sets)));
     }
 
     100% {
@@ -925,14 +878,13 @@ section:nth-of-type(4) .div3 {
     }
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .obsessions-grid {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 0.5fr 1fr;
     }
 
-    section:nth-of-type(4) .div2 {
+    section:nth-of-type(4) .section-title {
         grid-area: 2 / 1 / 3 / 2;
     }
 
@@ -954,13 +906,12 @@ section:nth-of-type(5) {
     margin: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
     margin-top: 10%;
 }
 #fish-container {
-    position: relative; /* Zorgt dat 'absolute' vissen binnen deze bak blijven */
+    position: relative; 
     width: 100%;
-    height: 100vh; /* Vul het hele scherm */
+    height: 100vh; 
     overflow: hidden;
 }
 .student-fish {
@@ -984,7 +935,7 @@ section:nth-of-type(5) {
 .student-fish img {
     width: 60px;
     height: 60px;
-    border-radius: 50% 50% 50% 50%; /* Mooi rond als de kop van de vis */
+    border-radius: 50%;
     border: 3px solid var(--fish-glow);
     box-shadow: 0 0 15px var(--fish-glow);
     object-fit: cover;
@@ -999,7 +950,7 @@ section:nth-of-type(5) {
     height: 0;
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
-    border-left: 30px solid var(--fish-glow); /* De kleur van de staart */
+    border-left: 30px solid var(--fish-glow); 
     border-radius: 5px;
     z-index: 1;
     
@@ -1012,7 +963,7 @@ section:nth-of-type(5) {
 .fish-name {
     color: white;
     font-size: 0.7rem;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: Montserrat, sans-serif;
     margin-top: 8px;
     text-shadow: 0 0 5px black;
 }
@@ -1166,9 +1117,6 @@ section:nth-of-type(5) {
 
         font-size: 50px;
     }
-
-    #last-name {}
-
     .nav-button {
         right: 1rem;
         padding: 0.7rem 1.2rem;

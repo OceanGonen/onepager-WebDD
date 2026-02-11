@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -34,38 +35,38 @@
     <section>
 
         <div class="parent">
-            <div class="div1"><button class="bubble" style="--x: 15%; --y: 46%; --delay: 1.4s">
-                    <span class="bubble-title">&#10023;</span>
-                    <p class="bubble-text">
-                        Ik vind door eerst overzicht te krijgen in problemen
-                        of eisen, ontstaat er pas de <em>ruimte om keuzes te maken</em>.
-                    </p>
-                </button> </div>
-            <div class="div2"> <button class="bubble" style="--x: 70%; --y: 43%; --delay: 0.4s">
-                    <span class="bubble-title">&#10023;</span>
-                    <p class="bubble-text">
-                        Beperkingen zijn brandstof voor je creativiteit.
-                    </p>
-                </button></div>
-            <div class="div3">
-                <div class="wave-container">
-                    <h2 class="wave-text" id="cta-stop">
-                        <span>D</span><span>E</span><span>N</span><span>K</span><span>W</span><span>I</span><span>J</span><span>Z</span><span>E</span>
-                    </h2>
-                </div>
+            <button class="bubble" style="--x: 11%; --y: 57%; --delay: 1.4s">
+                <span class="bubble-title">&#10023;</span>
+                <p class="bubble-text">
+                    Ik vind door eerst overzicht te krijgen in problemen
+                    of eisen, ontstaat er pas de <em>ruimte om keuzes te maken</em>.
+                </p>
+            </button>
+            <button class="bubble" style="--x: 70%; --y: 27%; --delay: 0.4s">
+                <span class="bubble-title">&#10023;</span>
+                <p class="bubble-text">
+                    Beperkingen zijn brandstof voor je creativiteit.
+                </p>
+            </button>
+
+            <div class="wave-container">
+                <h2 class="wave-text" id="cta-stop">
+                    <span>D</span><span>E</span><span>N</span><span>K</span><span>W</span><span>I</span><span>J</span><span>Z</span><span>E</span>
+                </h2>
             </div>
-            <div class="div4"> <button class="bubble" style="--x: 25%; --y: 58%; --delay: 0.9s">
-                    <span class="bubble-title">&#10023;</span>
-                    <p class="bubble-text">
-                        Fouten zie ik als richtingaanwijzers, niet als mislukkingen.
-                    </p>
-                </button> </div>
-            <div class="div5"> <button class="bubble" style="--x: 75%; --y: 56%; --delay: 0.2s">
-                    <span class="bubble-title">&#10023;</span>
-                    <p class="bubble-text">
-                        Ik ben banger voor spijt dan bang om te falen.
-                    </p>
-                </button> </div>
+
+            <button class="bubble" style="--x: 18%; --y: 22%; --delay: 0.9s">
+                <span class="bubble-title">&#10023;</span>
+                <p class="bubble-text">
+                    Fouten zie ik als richtingaanwijzers, niet als mislukkingen.
+                </p>
+            </button>
+            <button class="bubble" style="--x: 75%; --y: 64%; --delay: 0.2s">
+                <span class="bubble-title">&#10023;</span>
+                <p class="bubble-text">
+                    Ik ben banger voor spijt dan bang om te falen.
+                </p>
+            </button>
         </div>
 
         <!-- Marine snow effect -->
@@ -74,7 +75,7 @@
     </section>
     <section id="leerdoelen" aria-label="leerdoelen">
         <div class="grid-parent">
-            <div class="div1">
+            <div class="leerdoel-1">
                 <div class="goal-card left-slide">
                     <div class="goal-content">
                         <div class="competence-tags">
@@ -86,14 +87,14 @@
 
                         <p class="goal-description">
                             <strong>Focus:</strong> Ik wil begrijpen hoe ik API-fetch verzoeken optimaliseer door alleen
-                            specifieke velden (namen/foto's) op te halen.
+                            specifieke velden (namen/foto's) op te halen en kan tonen op mijn webpagina.
                         </p>
 
                         <div class="measurement">
                             <h4>Meetbaar resultaat:</h4>
                             <ul>
-                                <li>Schonere JSON-data in de console.</li>
-                                <li>Server load minimaliseren.</li>
+                                <li>"Schone" JSON-data op de webpagina.</li>
+                                <li>Load minimaliseren door onder 50MB te blijven.</li>
                             </ul>
                         </div>
 
@@ -101,7 +102,7 @@
                 </div>
             </div>
 
-            <div class="div2">
+            <div class="section-title">
                 <div class="wave-container">
                     <h2 class="wave-text">
                         <span>L</span><span>E</span><span>E</span><span>R</span><span>D</span><span>O</span><span>E</span><span>L</span><span>E</span><span>N</span>
@@ -109,7 +110,7 @@
                 </div>
             </div>
 
-            <div class="div3">
+            <div class="leerdoel-2">
                 <div class="goal-card right-slide">
                     <div class="goal-content">
                         <div class="competence-tags">
@@ -120,8 +121,8 @@
                         <h3>Frontend: Closed loop carousel</h3>
 
                         <p class="goal-description">
-                            <strong>Focus:</strong> Ik optimaliseer de JavaScript-logica van mijn carrousels om een
-                            vloeiende 'infinite scroll' te realiseren zonder haperingen bij de overgang.
+                            <strong>Focus:</strong> Ik optimaliseer de logica van mijn carrousels om een
+                            vloeiende 'infinite scroll' te realiseren zonder haperingen bij de overgang voor een onbepaalde aantal items.
                         </p>
 
                         <div class="measurement">
@@ -141,96 +142,92 @@
     </section>
     <section id="obsessions">
         <div class="obsessions-grid">
-            <div class="div1 carousel-container">
-                <div class="carousel-items-container">
-                    <div class="carousel-track reverse">
-                        <div class="carousel-img"><img src="images/food/squashsoep.jpeg"></div>
-                        <div class="carousel-img"><img src="images/food/kipkatsu.jpeg"></div>
-                        <div class="carousel-img"><img src="images/food/paddestoelenrisotto.jpeg"></div>
-                        <div class="carousel-img"><img src="images/food/kipshoarma.jpeg"></div>
-                        <div class="carousel-img"><img src="images/food/gebradenkip.jpeg"></div>
-                        <div class="carousel-img"><img src="images/food/burger.jpeg"></div>
-                        <div class="carousel-img"><img src="images/food/steakmash.jpeg"></div>
-                    </div>
-                </div>
-                <div class="carousel-items-container">
-                    <div class="carousel-track reverse">
-                        <div class="carousel-img"><img src="images/food/squashsoep.jpeg"></div>
-                        <div class="carousel-img"><img src="images/food/kipkatsu.jpeg"></div>
-                        <div class="carousel-img"><img src="images/food/paddestoelenrisotto.jpeg"></div>
-                        <div class="carousel-img"><img src="images/food/kipshoarma.jpeg"></div>
-                        <div class="carousel-img"><img src="images/food/gebradenkip.jpeg"></div>
-                        <div class="carousel-img"><img src="images/food/burger.jpeg"></div>
-                        <div class="carousel-img"><img src="images/food/steakmash.jpeg"></div>
-                    </div>
+            <div class="kook-passie carousel-container">
+                <div class="carousel-track reverse">
+                    <div class="carousel-img"><img src="images/food/squashsoep.jpeg"></div>
+                    <div class="carousel-img"><img src="images/food/kipkatsu.jpeg"></div>
+                    <div class="carousel-img"><img src="images/food/paddestoelenrisotto.jpeg"></div>
+                    <div class="carousel-img"><img src="images/food/kipshoarma.jpeg"></div>
+                    <div class="carousel-img"><img src="images/food/gebradenkip.jpeg"></div>
+                    <div class="carousel-img"><img src="images/food/burger.jpeg"></div>
+                    <div class="carousel-img"><img src="images/food/steakmash.jpeg"></div>
+                    <!-- duplicates: -->
+                    <div class="carousel-img"><img src="images/food/squashsoep.jpeg"></div>
+                    <div class="carousel-img"><img src="images/food/kipkatsu.jpeg"></div>
+                    <div class="carousel-img"><img src="images/food/paddestoelenrisotto.jpeg"></div>
+                    <div class="carousel-img"><img src="images/food/kipshoarma.jpeg"></div>
+                    <div class="carousel-img"><img src="images/food/gebradenkip.jpeg"></div>
+                    <div class="carousel-img"><img src="images/food/burger.jpeg"></div>
+                    <div class="carousel-img"><img src="images/food/steakmash.jpeg"></div>
                 </div>
 
             </div>
 
-            <div class="div2">
+            <div class="section-title">
                 <div class="wave-container">
                     <h2 class="wave-text">
                         <span>P</span><span>A</span><span>S</span><span>S</span><span>I</span><span>E</span><span>S</span>
                     </h2>
                 </div>
             </div>
-            <div class="div3 carousel-container">
+            <div class="sport-passie carousel-container">
 
-                <div class="carousel-items-container">
-                    <div class="carousel-track">
-                        <div class="carousel-item">
-                            <video autoplay loop muted playsinline>
-                                <source src="images/obsessie/entry.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="carousel-item">
-                            <video autoplay loop muted playsinline>
-                                <source src="images/obsessie/flag.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="carousel-item">
-                            <video autoplay loop muted playsinline>
-                                <source src="images/obsessie/pushup.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="carousel-item"><video autoplay loop muted playsinline>
-                                <source src="images/obsessie/press.mp4" type="video/mp4">
-                            </video></div>
-                        <div class="carousel-item"><video autoplay loop muted playsinline>
-                                <source src="images/obsessie/hollowback.mp4" type="video/mp4">
-                            </video></div>
-                        <div class="carousel-item"><video autoplay loop muted playsinline>
-                                <source src="images/obsessie/backlever.mp4" type="video/mp4">
-                            </video></div>
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/obsessie/entry.mp4" type="video/mp4">
+                        </video>
                     </div>
-                </div>
-                <div class="carousel-items-container">
-                    <div class="carousel-track">
-                        <div class="carousel-item">
-                            <video autoplay loop muted playsinline>
-                                <source src="images/obsessie/entry.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="carousel-item">
-                            <video autoplay loop muted playsinline>
-                                <source src="images/obsessie/flag.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="carousel-item">
-                            <video autoplay loop muted playsinline>
-                                <source src="images/obsessie/pushup.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="carousel-item"><video autoplay loop muted playsinline>
-                                <source src="images/obsessie/press.mp4" type="video/mp4">
-                            </video></div>
-                        <div class="carousel-item"><video autoplay loop muted playsinline>
-                                <source src="images/obsessie/hollowback.mp4" type="video/mp4">
-                            </video></div>
-                        <div class="carousel-item"><video autoplay loop muted playsinline>
-                                <source src="images/obsessie/backlever.mp4" type="video/mp4">
-                            </video></div>
+                    <div class="carousel-item">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/obsessie/flag.mp4" type="video/mp4">
+                        </video>
                     </div>
+                    <div class="carousel-item">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/obsessie/pushup.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-item">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/obsessie/press.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-item">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/obsessie/hollowback.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-item">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/obsessie/backlever.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- duplicates -->
+                    <div class="carousel-item">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/obsessie/entry.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-item">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/obsessie/flag.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-item">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/obsessie/pushup.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-item"><video autoplay loop muted playsinline>
+                            <source src="images/obsessie/press.mp4" type="video/mp4">
+                        </video></div>
+                    <div class="carousel-item"><video autoplay loop muted playsinline>
+                            <source src="images/obsessie/hollowback.mp4" type="video/mp4">
+                        </video></div>
+                    <div class="carousel-item"><video autoplay loop muted playsinline>
+                            <source src="images/obsessie/backlever.mp4" type="video/mp4">
+                        </video></div>
                 </div>
 
             </div>

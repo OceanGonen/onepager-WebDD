@@ -140,7 +140,7 @@ bubbles.forEach(bubble => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
-        threshold: 0.2 // Trigger when 20% of the section is visible
+        threshold: 0.2 
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -148,14 +148,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const cards = entry.target.querySelectorAll('.goal-card');
             
             if (entry.isIntersecting) {
-                // When entering: Add the class
                 cards.forEach((card, index) => {
                     setTimeout(() => {
                         card.classList.add('reveal');
-                    }, index * 200); // Small stagger effect
+                    }, index * 200); 
                 });
             } else {
-                // When leaving: Remove the class
                 cards.forEach(card => {
                     card.classList.remove('reveal');
                 });
@@ -163,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Target the specific section
     const leerdoelenSection = document.querySelector('#leerdoelen');
     if (leerdoelenSection) {
         observer.observe(leerdoelenSection);

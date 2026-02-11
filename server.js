@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
             let result = await response.json();
             let students = result.data;
 
-            console.log("Gevangen studenten:", students); // Zie je hier een lijst met namen?
+            console.log("Gevangen studenten:", students); 
             createFish(students);
         } catch (error) {
             console.error("Net gebroken:", error);
