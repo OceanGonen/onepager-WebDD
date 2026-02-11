@@ -40,7 +40,7 @@ Deze dag heb ik een async functie genaamd myData() geschreven om data op te hale
 - Behaald: Een async functie myData() geschreven om data op te halen. Geëxperimenteerd met filters in de URL om specifiek de juiste squad-data binnen te krijgen.
 Bronnen: Directus API Documentation
 
-**Week 1:** (2 feb - 6 feb) Focus: Frontend structuur, Scroll-logica en API-connectiviteit
+**Week 1:** (2 feb - 6 feb) Focus: Frontend structuur, Scroll-logica en API verbinding. 
 In de eerste week lag de focus op het fundament voor de vibe van de website. Het hoofddoel was om een navigatie-flow te creëren die natuurlijk aanvoelt bij het afdalen naar de bodem van de oceaan. Technische Hoogtepunten: 
 Viewport Detectie: Implementatie van getBoundingClientRect() om nauwkeurig te bepalen in welke 'waterlaag' de gebruiker zich bevindt. Dit vormt de basis voor de dynamische achtergronden en animaties. 
 <img width="1148" height="293" alt="image" src="https://github.com/user-attachments/assets/80f3c0c2-648e-4816-9f01-1f224cedc802" />
