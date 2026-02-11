@@ -40,9 +40,29 @@ Deze dag heb ik een async functie genaamd myData() geschreven om data op te hale
 - Behaald: Een async functie myData() geschreven om data op te halen. Geëxperimenteerd met filters in de URL om specifiek de juiste squad-data binnen te krijgen.
 Bronnen: Directus API Documentation
 
+**Week 1:** (2 feb - 6 feb) Focus: Frontend structuur, Scroll-logica en API-connectiviteit
+In de eerste week lag de focus op het fundament voor de vibe van de website. Het hoofddoel was om een navigatie-flow te creëren die natuurlijk aanvoelt bij het afdalen naar de bodem van de oceaan. Technische Hoogtepunten: 
+Viewport Detectie: Implementatie van getBoundingClientRect() om nauwkeurig te bepalen in welke 'waterlaag' de gebruiker zich bevindt. Dit vormt de basis voor de dynamische achtergronden en animaties. 
+<img width="1148" height="293" alt="image" src="https://github.com/user-attachments/assets/80f3c0c2-648e-4816-9f01-1f224cedc802" />
+
+Wiskundige Centering: Ontwikkeling om secties te centreren bij scrollen: scrollPos = section.offsetTop + (section.offsetHeight / 2) - (window.innerHeight / 2) Dit zorgde voor de gewenste "snap-to-center" interactie.
+
+Ambiance: Creatie van een interactief particle-system ('marine snow') en een cursor-glow die de gebruiker visuele feedback geven tijdens de interactie.Backend Koppeling: De eerste succesvolle verbinding met de Directus API (async/await). Er is geëxperimenteerd met URL-parameters om specifiek data voor de eigen squad op te halen.
+<img width="846" height="335" alt="image" src="https://github.com/user-attachments/assets/515b46a9-291b-432c-ac89-c0d565f357ad" />
+
+
+Behaalde Doelen (Week 1):
+Interactieve Flow: Een functionerend scroll-systeem met visuele feedback. API Verkenning: Succesvolle fetch-requests met basis filtering.
+
 Maandag 9/2
 Vandaag heb ik een sectie meer leven gegeven door de carrousels technisch te verfijnen. Ik heb de CSS animatie nog niet op een manier dat de tracks vloeiend en zonder haperingen doorlopen. Om het visueel spannender te maken, heb ik voor de verschillende rijen een 'reverse' animatie toegevoegd, wat een dynamisch diepzee-effect geeft.
 - Doel: De carrousels vloeiend gemaakt.
 - Behaald: De CSS  animatie verbeterd voor de carrousel-track. Een 'reverse' animatie toegevoegd voor visuele afwisseling.
 
 Dinsdag 10/2
+
+Gisteren heb ik gewerkt aan de motion controls. Omdat mijn webpagina vol zit met zwevende wolken en zwemmende vissen, heb ik via de prefers-reduced-motion media query het optioneel gemaakt. Daarnaast heb ik de carrousels in de "Passie" sectie technisch verbeterd. Door de animatie-timing en de breedte van de tracks exact op elkaar af te stemmen, heb ik een 'loop' gecreëerd die oneindig doorgaat zonder dat de gebruiker ziet waar de lijst met afbeeldingen opnieuw begint. Dit maakt de ervaring een stuk professioneler en rustiger op het oog. 
+- Doel: De website bruikbaar maken voor gebruikers met bewegingsgevoeligheid & de infinite carrousels een closed loop maken & de data van de medestudenten op de webpagina tonen.
+- Behaald: De carrousels naar een 'infinite loop' en de externe data van medestudenten uit de API visueel tonen op de pagina.
+
+Woensdag 11/2
