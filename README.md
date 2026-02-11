@@ -47,9 +47,10 @@ Viewport Detectie: Implementatie van getBoundingClientRect() om nauwkeurig te be
 
 Wiskundige Centering: Ontwikkeling om secties te centreren bij scrollen: scrollPos = section.offsetTop + (section.offsetHeight / 2) - (window.innerHeight / 2) Dit zorgde voor de gewenste "snap-to-center" interactie.
 
-Ambiance: Creatie van een interactief particle-system ('marine snow') en een cursor-glow die de gebruiker visuele feedback geven tijdens de interactie.Backend Koppeling: De eerste succesvolle verbinding met de Directus API (async/await). Er is geëxperimenteerd met URL-parameters om specifiek data voor de eigen squad op te halen.
+Ambiance: Creatie van een interactief particle-system ('marine snow') en een cursor-glow die de gebruiker visuele feedback geven tijdens de interactie.
 <img width="846" height="335" alt="image" src="https://github.com/user-attachments/assets/515b46a9-291b-432c-ac89-c0d565f357ad" />
 
+Backend Koppeling: De eerste succesvolle verbinding met de Directus API. Ik heb geëxperimenteerd met URL-parameters om specifiek data voor de eigen squad op te halen.
 
 Behaalde Doelen (Week 1):
 Interactieve Flow: Een functionerend scroll-systeem met visuele feedback. API Verkenning: Succesvolle fetch-requests met basis filtering.
