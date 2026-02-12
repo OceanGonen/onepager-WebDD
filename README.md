@@ -7,7 +7,7 @@ Doel: Ik breid mijn API-fetch (Directus) uit zodat ik alleen specifieke velden (
 2. Frontend: Closed loop carousel
 Competenties: Prototypen en uitwerken | Samen ontwerpen
 
-Doel: Ik optimaliseer de JavaScript-logica van mijn carrousels door een 'infinite scroll' te realiseren zonder visuele haperingen. Ik gebruik hiervoor transform: translateX en stem de timing/threshold. Meetbaar resultaat: Een naadloze overloop van de items in de 'Abyss' sectie en gedocumenteerde feedback van een peer.
+Doel: Ik optimaliseer de animatie logica van mijn carrousels door een 'infinite scroll' te realiseren zonder visuele haperingen. Ik gebruik hiervoor transform: translateX en stem de timing/threshold. Meetbaar resultaat: Een naadloze overloop van de items in de sectie en feedback van een docent.
 
 3. Visual Storytelling via Scroll-interface
 Competentie: Verbeelden en conceptualiseren
