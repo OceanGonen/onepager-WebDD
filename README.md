@@ -9,6 +9,11 @@ Competenties: Prototypen en uitwerken | Samen ontwerpen
 
 Doel: Ik optimaliseer de JavaScript-logica van mijn carrousels door een 'infinite scroll' te realiseren zonder visuele haperingen. Ik gebruik hiervoor transform: translateX en stem de timing/threshold. Meetbaar resultaat: Een naadloze overloop van de items in de 'Abyss' sectie en gedocumenteerde feedback van een peer.
 
+3. Visual Storytelling via Scroll-interface
+Competentie: Verbeelden en conceptualiseren
+
+Doel: Het vertalen van een concept (de oceaan) naar een thematische gebruikerservaring waarbij de sfeer verandert naarmate de gebruiker dieper "duikt".
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Logboek:**
 
@@ -44,19 +49,24 @@ Bronnen: Directus API Documentation
 In de eerste week lag de focus op het fundament voor de vibe van de website. Het hoofddoel was om een navigatie-flow te creëren die natuurlijk aanvoelt bij het afdalen naar de bodem van de oceaan. Technische Hoogtepunten: 
 Viewport Detectie: Implementatie van getBoundingClientRect() om nauwkeurig te bepalen in welke 'waterlaag' de gebruiker zich bevindt. Dit vormt de basis voor de dynamische achtergronden en animaties. 
 <img width="1148" height="293" alt="image" src="https://github.com/user-attachments/assets/80f3c0c2-648e-4816-9f01-1f224cedc802" />
+Bronnen: https://stackoverflow.com/questions/44172651/difference-between-getboundingclientrect-top-and-offsettop?
 
 Wiskundige Centering: Ontwikkeling om secties te centreren bij scrollen: scrollPos = section.offsetTop + (section.offsetHeight / 2) - (window.innerHeight / 2) Dit zorgde voor de gewenste "snap-to-center" interactie.
+Bronnen: https://stackoverflow.com/questions/11529070/scroll-to-the-center-of-viewport?
 
 Ambiance: Creatie van een interactief particle-system ('marine snow') en een cursor-glow die de gebruiker visuele feedback geven tijdens de interactie.
 <img width="846" height="335" alt="image" src="https://github.com/user-attachments/assets/515b46a9-291b-432c-ac89-c0d565f357ad" />
+Bronnen: 
 
-Backend Koppeling: De eerste succesvolle verbinding met de Directus API. Ik heb geëxperimenteerd met URL-parameters om specifiek data voor de eigen squad op te halen.
+Backend Koppeling: De eerste succesvolle verbinding met de Directus API. Ik heb geëxperimenteerd met URL-parameters om specifieke data op te halen.
 
 Behaalde Doelen (Week 1):
-Interactieve Flow: Een functionerend scroll-systeem met visuele feedback. API Verkenning: Succesvolle fetch-requests met basis filtering.
+Interactieve Flow: Een functionerend scroll-systeem met visuele feedback. 
+API Verkenning: Succesvolle fetch-requests met basis filtering.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Maandag 9/2
-Vandaag heb ik een sectie meer leven gegeven door de carrousels technisch te verfijnen. Ik heb de CSS animatie nog niet op een manier dat de tracks vloeiend en zonder haperingen doorlopen. Om het visueel spannender te maken, heb ik voor de verschillende rijen een 'reverse' animatie toegevoegd, wat een dynamisch diepzee-effect geeft.
+Vandaag heb ik een sectie meer leven gegeven door de carrousels technisch te verfijnen. Ik heb de CSS animatie nog niet op een manier dat de tracks vloeiend en zonder haperingen doorlopen. Om het visueel interssanter te maken, heb ik voor de verschillende rijen een 'reverse' animatie toegevoegd, wat een dynamisch diepzee-effect geeft.
 - Doel: De carrousels vloeiend gemaakt.
 - Behaald: De CSS  animatie verbeterd voor de carrousel-track. Een 'reverse' animatie toegevoegd voor visuele afwisseling.
 
@@ -67,3 +77,28 @@ Gisteren heb ik gewerkt aan de motion controls. Omdat mijn webpagina vol zit met
 - Behaald: De carrousels naar een 'infinite loop' en de externe data van medestudenten uit de API visueel tonen op de pagina.
 
 Woensdag 11/2
+
+Vandaag was een kortere dag omdat ik me helaas niet lekker voelde en eerder naar huis ben gegaan. Desondanks heb ik de tijd die ik had nuttig besteed aan den andere belangrijke kant van webdevelopment. Ik heb mijn README volledig compleet gemaakt, zodat mijn hele proces van de afgelopen anderhalve week nu duidelijk gedocumenteerd is voor anderen. Daarnaast heb ik de eerste stappen gezet in het toevoegen van ARIA-labels.
+
+**Week 2: ** (9 feb - 10 feb)
+Focus: Toegankelijkheid, responsiveness,  en Dynamische Data-visualisatie
+
+De tweede week stond in het teken van de interacties en het toegankelijk maken van de website.
+
+Technische Hoogtepunten:
+Closed Loop Carousel: De transformatie van een haperende slide naar een naadloze 'infinite loop'. Door de track exact op 50% van de breedte te laten loopen met een linear timing-function.
+<img width="669" height="216" alt="image" src="https://github.com/user-attachments/assets/5f69bd6c-d9a5-4075-b26e-f2699a0d93a1" />
+Bronnen: Cyd Stumpel
+
+Motion Sensitivity: Implementatie van de prefers-reduced-motion media query. Hiermee wordt de website inclusief: gebruikers die last hebben van bewegingsziekte kunnen de animaties (wolken, vissen, particles) nu automatisch uitschakelen via hun systeeminstellingen.
+
+Van Data naar Visueel Object: De grootste doorbraak was het mappen van studentendata naar unieke vis-elementen. In plaats van een tekstlijst wordt de API-data (namen en foto's) nu gebruikt om dynamische vissen te genereren die door de sectioe zwemmen.
+<img width="1904 / 2" height="899 / 2" alt="image" src="https://github.com/user-attachments/assets/500e3f97-4714-4d01-8b56-ba80ce049444" />
+
+Behaalde Doelen (Week 2):
+Infinite Scroll: Een technisch perfecte carrousel zonder visuele 'sprong'.
+
+Toegankelijkheid: De website respecteert systeemvoorkeuren voor motoin.
+
+Dynamische UI: API-data van medestudenten is visueel geïntegreerd in het thema van de website.
+
