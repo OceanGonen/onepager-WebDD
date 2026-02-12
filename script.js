@@ -101,7 +101,7 @@ for (let i = 0; i < particleCount; i++) {
 
 // Update color based on depth
 window.addEventListener('scroll', () => {
-    const pageHeight = window.innerHeight * 0.8;
+    const pageHeight = window.innerHeight;
     const scrollY = window.scrollY;
     
     const scrollPercent = scrollY / (document.documentElement.scrollHeight - window.innerHeight);

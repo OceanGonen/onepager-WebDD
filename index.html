@@ -15,11 +15,8 @@
 </head>
 
 <body>
-    <header>
-
-    </header>
-    <section>
-        <div class="clouds">
+    <section aria-label="Introductie: Deep Dive">
+        <div class="clouds" aria-hidden="true">
             <div class="cloud cloud-1"></div>
             <div class="cloud cloud-2"></div>
             <div class="cloud cloud-3"></div>
@@ -27,23 +24,25 @@
             <div class="cloud cloud-5"></div>
         </div>
         <h1>DEEP DIVE</h1>
-        <a href="#cta-stop">Dive in</a>
+        <a href="#cta-stop" aria-label="Duik dieper naar de sectie over werkwijze">Dive in</a>
         <div class="name-container">
             <h2 aria-label="Ocean"></h2>
         </div>
     </section>
-    <section>
 
+    <section aria-label="Denkwijze en mindset">
         <div class="parent">
-            <button class="bubble" style="--x: 11%; --y: 57%; --delay: 1.4s">
-                <span class="bubble-title">&#10023;</span>
+            <button class="bubble" style="--x: 11%; --y: 57%; --delay: 1.4s"
+                aria-label="Visie op overzicht en keuzes maken">
+                <span class="bubble-title" aria-hidden="true">&#10023;</span>
                 <p class="bubble-text">
                     Ik vind door eerst overzicht te krijgen in problemen
                     of eisen, ontstaat er pas de <em>ruimte om keuzes te maken</em>.
                 </p>
             </button>
-            <button class="bubble" style="--x: 70%; --y: 27%; --delay: 0.4s">
-                <span class="bubble-title">&#10023;</span>
+            <button class="bubble" style="--x: 70%; --y: 27%; --delay: 0.4s"
+                aria-label="Visie op beperkingen en creativiteit">
+                <span class="bubble-title" aria-hidden="true">&#10023;</span>
                 <p class="bubble-text">
                     Beperkingen zijn brandstof voor je creativiteit.
                 </p>
@@ -55,25 +54,24 @@
                 </h2>
             </div>
 
-            <button class="bubble" style="--x: 18%; --y: 22%; --delay: 0.9s">
-                <span class="bubble-title">&#10023;</span>
+            <button class="bubble" style="--x: 18%; --y: 22%; --delay: 0.9s" aria-label="Visie op fouten maken">
+                <span class="bubble-title" aria-hidden="true">&#10023;</span>
                 <p class="bubble-text">
                     Fouten zie ik als richtingaanwijzers, niet als mislukkingen.
                 </p>
             </button>
-            <button class="bubble" style="--x: 75%; --y: 64%; --delay: 0.2s">
-                <span class="bubble-title">&#10023;</span>
+            <button class="bubble" style="--x: 75%; --y: 64%; --delay: 0.2s" aria-label="Visie op angst en falen">
+                <span class="bubble-title" aria-hidden="true">&#10023;</span>
                 <p class="bubble-text">
                     Ik ben banger voor spijt dan bang om te falen.
                 </p>
             </button>
         </div>
 
-        <!-- Marine snow effect -->
         <div id="particle-container" aria-hidden="true"></div>
-        </div>
     </section>
-    <section id="leerdoelen" aria-label="leerdoelen">
+
+    <section id="leerdoelen" aria-label="Mijn leerdoelen voor Backend en Frontend">
         <div class="grid-parent">
             <div class="leerdoel-1">
                 <div class="goal-card left-slide">
@@ -93,8 +91,9 @@
                         <div class="measurement">
                             <h4>Meetbaar resultaat:</h4>
                             <ul>
-                                <li>"Schone" JSON-data op de webpagina.</li>
-                                <li>Load minimaliseren door onder 50MB te blijven.</li>
+                                <li>gehele JSON-data in de console.</li>
+                                <li>Een deel van de data dynamisch tonen op de pagina.</li>
+                                <li>Werken met dummydata</li>
                             </ul>
                         </div>
 
@@ -122,7 +121,8 @@
 
                         <p class="goal-description">
                             <strong>Focus:</strong> Ik optimaliseer de logica van mijn carrousels om een
-                            vloeiende 'infinite scroll' te realiseren zonder haperingen bij de overgang voor een onbepaalde aantal items.
+                            vloeiende 'infinite scroll' te realiseren zonder haperingen bij de overgang voor een
+                            onbepaalde aantal items.
                         </p>
 
                         <div class="measurement">
@@ -130,7 +130,7 @@
                             <ul>
                                 <li>De <code>transform: translateX</code> logica sluit naadloos aan (geen 'sprong').
                                 </li>
-                                <li>Een succesvolle programming waarbij de animatie-timing is
+                                <li>Een programming waarbij de animatie-timing is
                                     geoptimaliseerd.</li>
                             </ul>
                         </div>
@@ -140,27 +140,31 @@
             </div>
         </div>
     </section>
-    <section id="obsessions">
-        <div class="obsessions-grid">
-            <div class="kook-passie carousel-container">
-                <div class="carousel-track reverse">
-                    <div class="carousel-img"><img src="images/food/squashsoep.jpeg"></div>
-                    <div class="carousel-img"><img src="images/food/kipkatsu.jpeg"></div>
-                    <div class="carousel-img"><img src="images/food/paddestoelenrisotto.jpeg"></div>
-                    <div class="carousel-img"><img src="images/food/kipshoarma.jpeg"></div>
-                    <div class="carousel-img"><img src="images/food/gebradenkip.jpeg"></div>
-                    <div class="carousel-img"><img src="images/food/burger.jpeg"></div>
-                    <div class="carousel-img"><img src="images/food/steakmash.jpeg"></div>
-                    <!-- duplicates: -->
-                    <div class="carousel-img"><img src="images/food/squashsoep.jpeg"></div>
-                    <div class="carousel-img"><img src="images/food/kipkatsu.jpeg"></div>
-                    <div class="carousel-img"><img src="images/food/paddestoelenrisotto.jpeg"></div>
-                    <div class="carousel-img"><img src="images/food/kipshoarma.jpeg"></div>
-                    <div class="carousel-img"><img src="images/food/gebradenkip.jpeg"></div>
-                    <div class="carousel-img"><img src="images/food/burger.jpeg"></div>
-                    <div class="carousel-img"><img src="images/food/steakmash.jpeg"></div>
-                </div>
 
+    <section id="obsessions" aria-label="Mijn passies: Koken en Sport">
+        <div class="obsessions-grid">
+            <div class="kook-passie carousel-container" role="region" aria-label="Foto carrousel van kookgerechten">
+                <div class="carousel-track reverse">
+                    <div class="carousel-img"><img src="images/food/squashsoep.jpeg" alt="squashsoep"></div>
+                    <div class="carousel-img"><img src="images/food/kipkatsu.jpeg" alt="Kip katsu gerecht"></div>
+                    <div class="carousel-img"><img src="images/food/paddestoelenrisotto.jpeg" alt="Paddestoelenrisotto">
+                    </div>
+                    <div class="carousel-img"><img src="images/food/kipshoarma.jpeg" alt="Zelfgemaakte kipshoarma">
+                    </div>
+                    <div class="carousel-img"><img src="images/food/gebradenkip.jpeg" alt="Gebraden kip uit de oven">
+                    </div>
+                    <div class="carousel-img"><img src="images/food/burger.jpeg" alt="hamburger"></div>
+                    <div class="carousel-img"><img src="images/food/steakmash.jpeg" alt="Steak met aardappelpuree">
+                    </div>
+                    <div class="carousel-img" aria-hidden="true"><img src="images/food/squashsoep.jpeg" alt=""></div>
+                    <div class="carousel-img" aria-hidden="true"><img src="images/food/kipkatsu.jpeg" alt=""></div>
+                    <div class="carousel-img" aria-hidden="true"><img src="images/food/paddestoelenrisotto.jpeg" alt="">
+                    </div>
+                    <div class="carousel-img" aria-hidden="true"><img src="images/food/kipshoarma.jpeg" alt=""></div>
+                    <div class="carousel-img" aria-hidden="true"><img src="images/food/gebradenkip.jpeg" alt=""></div>
+                    <div class="carousel-img" aria-hidden="true"><img src="images/food/burger.jpeg" alt=""></div>
+                    <div class="carousel-img" aria-hidden="true"><img src="images/food/steakmash.jpeg" alt=""></div>
+                </div>
             </div>
 
             <div class="section-title">
@@ -170,77 +174,60 @@
                     </h2>
                 </div>
             </div>
-            <div class="sport-passie carousel-container">
 
+            <div class="sport-passie carousel-container" role="region"
+                aria-label="Video carrousel van calisthenics oefeningen">
                 <div class="carousel-track">
-                    <div class="carousel-item">
-                        <video autoplay loop muted playsinline>
+                    <div class="carousel-item"><video autoplay loop muted playsinline
+                            aria-label="Video van entry oefening">
                             <source src="images/obsessie/entry.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="carousel-item">
-                        <video autoplay loop muted playsinline>
+                        </video></div>
+                    <div class="carousel-item"><video autoplay loop muted playsinline aria-label="Video van human flag">
                             <source src="images/obsessie/flag.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="carousel-item">
-                        <video autoplay loop muted playsinline>
+                        </video></div>
+                    <div class="carousel-item"><video autoplay loop muted playsinline aria-label="Video van handstand pushups">
                             <source src="images/obsessie/pushup.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="carousel-item">
-                        <video autoplay loop muted playsinline>
+                        </video></div>
+                    <div class="carousel-item"><video autoplay loop muted playsinline
+                            aria-label="Video van shoulder press">
                             <source src="images/obsessie/press.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="carousel-item">
-                        <video autoplay loop muted playsinline>
+                        </video></div>
+                    <div class="carousel-item"><video autoplay loop muted playsinline
+                            aria-label="Video van hollowback hold">
                             <source src="images/obsessie/hollowback.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="carousel-item">
-                        <video autoplay loop muted playsinline>
+                        </video></div>
+                    <div class="carousel-item"><video autoplay loop muted playsinline aria-label="Video van back lever">
                             <source src="images/obsessie/backlever.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <!-- duplicates -->
-                    <div class="carousel-item">
-                        <video autoplay loop muted playsinline>
+                        </video></div>
+                    <div class="carousel-item" aria-hidden="true"><video autoplay loop muted playsinline>
                             <source src="images/obsessie/entry.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="carousel-item">
-                        <video autoplay loop muted playsinline>
+                        </video></div>
+                    <div class="carousel-item" aria-hidden="true"><video autoplay loop muted playsinline>
                             <source src="images/obsessie/flag.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="carousel-item">
-                        <video autoplay loop muted playsinline>
+                        </video></div>
+                    <div class="carousel-item" aria-hidden="true"><video autoplay loop muted playsinline>
                             <source src="images/obsessie/pushup.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="carousel-item"><video autoplay loop muted playsinline>
+                        </video></div>
+                    <div class="carousel-item" aria-hidden="true"><video autoplay loop muted playsinline>
                             <source src="images/obsessie/press.mp4" type="video/mp4">
                         </video></div>
-                    <div class="carousel-item"><video autoplay loop muted playsinline>
+                    <div class="carousel-item" aria-hidden="true"><video autoplay loop muted playsinline>
                             <source src="images/obsessie/hollowback.mp4" type="video/mp4">
                         </video></div>
-                    <div class="carousel-item"><video autoplay loop muted playsinline>
+                    <div class="carousel-item" aria-hidden="true"><video autoplay loop muted playsinline>
                             <source src="images/obsessie/backlever.mp4" type="video/mp4">
                         </video></div>
                 </div>
-
             </div>
-
         </div>
     </section>
-    <section>
-        <div id="fish-container">
 
-        </div>
+    <section aria-label="Interactief aquarium">
+        <div id="fish-container" aria-hidden="true"></div>
     </section>
-    <footer class="ocean-floor">
-        <div class="seaweed-container">
+
+    <footer class="ocean-floor" aria-label="Pagina voettekst">
+        <div class="seaweed-container" aria-hidden="true">
             <div class="seaweed seaweed-1"></div>
             <div class="seaweed seaweed-2"></div>
             <div class="seaweed seaweed-3"></div>
@@ -249,18 +236,18 @@
         <div class="footer-content">
             <div class="footer-links">
                 <p>&copy; 2026 Project: Web design & development</p>
-                <a href="https://github.com/OceanGonen" target="_blank">GitHub</a>
+                <a href="https://github.com/OceanGonen" target="_blank"
+                    aria-label="Bezoek mijn GitHub profiel">GitHub</a>
             </div>
         </div>
 
-        <div class="sand-floor"></div>
+        <div class="sand-floor" aria-hidden="true"></div>
     </footer>
 
-    <!-- Navigation buttons -->
-    <button id="float-up" class="nav-button float-up-btn">&#9906;</button>
-    <button id="sink-down" class="nav-button sink-down-btn">&#9880;</button>
+    <button id="float-up" class="nav-button float-up-btn" aria-label="Scroll naar boven">&#9906;</button>
+    <button id="sink-down" class="nav-button sink-down-btn" aria-label="Scroll naar beneden">&#9880;</button>
 
-
+   
 </body>
 
 </html>

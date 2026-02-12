@@ -858,6 +858,7 @@ section:nth-of-type(4) .sport-passie {
 }
 
 /* Infinite Scroll Animations */
+/* Bron: Cyd Stumpel */
 @keyframes scroll-left {
     0% {
         transform: translateX(0);
